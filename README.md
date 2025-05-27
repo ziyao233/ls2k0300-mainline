@@ -7,7 +7,8 @@ contains misc reference materials for development.
 
 ### Components that require driver changes
 
-- Clock controller: Yao Zi, WIP
+- Clock controller: Yao Zi, under review [v1](https://lore.kernel.org/all/20250523104552.32742-1-ziyao@disroot.org/)
+  on 2025.05.23
 - Reset controller: N/A
 - External interrupt controllers: N/A
   - The IOCSR layout of eiointcs on 2K0300 seems to differ
@@ -20,8 +21,8 @@ contains misc reference materials for development.
 
 ### Components that may require dt-binding changes only
 
-- Basic devicetree: by Yao Zi, under review [v2](https://lore.kernel.org/all/20250518080356.43885-1-ziyao@disroot.org/)
-  on 2025.05.18
+- Basic devicetree: by Yao Zi, under review [v3](https://lore.kernel.org/all/20250523095408.25919-1-ziyao@disroot.org/)
+  on 2025.05.23
 - Pinctrl controller: N/A
   - It's planned to reuse pinctrl-single driver
 - SDIO/eMMC: N/A
@@ -43,6 +44,10 @@ contains misc reference materials for development.
   definitions.
 - [Downstream 6.12 kernel](https://gitee.com/open-loongarch/linux-6.12/)
 - [Downstream U-Boot](https://gitee.com/open-loongarch/u-boot)
+
+## Summaries
+
+- [Clock definitions](/clk-summary.md)
 
 ## Available Hardwares on the Market
 
