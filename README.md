@@ -7,12 +7,13 @@ contains misc reference materials for development.
 
 ### Components that require driver changes
 
-- Clock controller: Yao Zi, under review [v1](https://lore.kernel.org/all/20250523104552.32742-1-ziyao@disroot.org/)
-  on 2025.05.23
-- Reset controller: N/A
+- Clock controller: Yao Zi, under review [v3](https://lore.kernel.org/all/20250805150147.25909-1-ziyao@disroot.org/)
+  on 2025.08.05
+- Reset controller: Yao Zi, in progress
+  - It's planned to use reset-simple
 - External interrupt controllers: N/A
-  - The IOCSR layout of eiointcs on 2K0300 seems to differ
-- GPIO controller: N/A
+  - The IOCSR layout of eiointcs on 2K0300 differs from other SoCs
+- GPIO controller: Yao Zi, in progress
 - Watchdog: N/A
 - I2C: N/A
 - USB OTG: N/A
@@ -23,11 +24,15 @@ contains misc reference materials for development.
 
 - Basic devicetree: by Yao Zi, under review [v3](https://lore.kernel.org/all/20250523095408.25919-1-ziyao@disroot.org/)
   on 2025.05.23
-- Pinctrl controller: N/A
-  - It's planned to reuse pinctrl-single driver
-- SDIO/eMMC: N/A
-  - may depend on the series "LoongArch: Introduce the Loongson-2K MMC host controller driver":
-    [v2](https://lore.kernel.org/loongarch/cover.1746581751.git.zhoubinbin@loongson.cn/) on 2025.05.07
+- Pinctrl controller: Yao Zi, under review [v1](https://lore.kernel.org/all/20250811163749.47028-2-ziyao@disroot.org/)
+  - ~~It was planned to reuse pinctrl-single driver~~ 2K0300 comes with a
+    separate register for drive-strength configuration, thus it doesn't match
+    pinctrl-single.
+- SDIO/eMMC: Yao Zi, in progress
+  - Depends on ["LoongArch: Introduce the Loongson-2K MMC host controller driver"](https://lore.kernel.org/all/cover.1750765495.git.zhoubinbin@loongson.cn/)
+    that landed in v6.17
+  - Compatible with the 2K2000 variant, but there seems to be some
+    [unique quirk](https://gitee.com/open-loongarch/linux-6.12/blob/master/drivers/mmc/host/ls2kmci.c#L783)
 - SPI controller: N/A
 - GMAC: N/A
 - USB Host: N/A
